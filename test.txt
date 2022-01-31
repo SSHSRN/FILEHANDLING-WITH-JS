@@ -1,0 +1,3 @@
+This is the Original Text.
+
+Reading a txt file is sucessfully done using JS!
