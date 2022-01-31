@@ -1,6 +1,7 @@
 const fs = require('fs');
 const content = "This is the modified text. \n\nReading and Writing in a txt file is sucessfully done using JS!";
-const appendText = "This is the appended text";
+const appendText = "This is the appended text.";
+const newText = "This is a new text file.";
 
 // fs.readFile('test.txt', 'utf8', (err, data) => {
 //     if(err){
@@ -59,3 +60,17 @@ var readme3 = fs.readFileSync('test.txt', 'utf8');
 console.log(readme3);
 
 //For things to happen in the sequence you code, use read/write/appendFileSync. Else, use async(check out the commented code.)
+
+//Writing contents from a text file to another text file.
+
+fs.readFile('test.txt', 'utf8', (err, data) => {
+    if(err){
+        console.error(err);
+        return;
+    }
+    fs.writeFile('new.txt', data, err => {
+            if (err) {
+                console.error(err);
+                return;
+            }});
+});
